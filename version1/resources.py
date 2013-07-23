@@ -1,4 +1,5 @@
 import pyglet
+from physical_object import PhysicalObject
 
 main_batch = pyglet.graphics.Batch()
 
@@ -22,6 +23,6 @@ score_label = pyglet.text.Label(text="Score: 0", x=10, y=575, batch=main_batch)
 level_label = pyglet.text.Label(text="Midma's Asteroid Fun", 
                                 x=400, y=575, anchor_x='center', batch=main_batch)
 
-player_ship = pyglet.sprite.Sprite(img=player_image, x=400, y=300, batch=main_batch)
+player_ship = PhysicalObject(img=player_image, x=400, y=300, batch=main_batch)
 
 

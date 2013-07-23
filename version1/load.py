@@ -1,5 +1,6 @@
 import pyglet, random, math
 import resources
+from physical_object import PhysicalObject
 
 def distance(point_1=(0,0), point_2=(0,0)):
 	"""Returns distance between two points"""
@@ -13,9 +14,10 @@ def asteroids(num_asteroids, player_position):
 		    asteroid_x = random.randint(0,800)
 		    asteroid_y = random.randint(0,600)
 
-		new_asteroid = pyglet.sprite.Sprite(img=resources.asteroid_image,
+		new_asteroid = PhysicalObject(img=resources.asteroid_image,
 											x=asteroid_x,y=asteroid_y, batch=resources.main_batch)
 		new_asteroid.rotation = random.randint(0,360)
+		new_asteroid.velocity_x, new_asteroid.velocity_y = random.random()*40, random.random()*40
 		asteroids.append(new_asteroid)
 
 	return asteroids
